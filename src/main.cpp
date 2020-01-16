@@ -66,45 +66,44 @@ int main(int argc, char *argv[])
         switch (c)
         {
             case '+':
-                outStream << GetIndent(indentLevels);
-                outStream << "array[ptr] += " << repetitions << ";\n";
+                outStream << GetIndent(indentLevels)
+                          << "array[ptr] += " << repetitions << ";\n";
                 inCodeIndex += repetitions;
                 break;
             case '-':
-                outStream << GetIndent(indentLevels);
-                outStream << "array[ptr] -= " << repetitions << ";\n";
+                outStream << GetIndent(indentLevels)
+                          << "array[ptr] -= " << repetitions << ";\n";
                 inCodeIndex += repetitions;
                 break;
             case '>':
-                outStream << GetIndent(indentLevels);
-                outStream << "ptr += " << repetitions << ";\n";
+                outStream << GetIndent(indentLevels) << "ptr += " << repetitions
+                          << ";\n";
                 inCodeIndex += repetitions;
                 break;
             case '<':
-                outStream << GetIndent(indentLevels);
-                outStream << "ptr -=" << repetitions << ";\n";
+                outStream << GetIndent(indentLevels) << "ptr -=" << repetitions
+                          << ";\n";
                 inCodeIndex += repetitions;
                 break;
             case '.':
-                outStream << GetIndent(indentLevels);
-                outStream << "putchar(array[ptr]);\n";
+                outStream << GetIndent(indentLevels)
+                          << "putchar(array[ptr]);\n";
                 inCodeIndex += 1;
                 break;
             case ',':
-                outStream << GetIndent(indentLevels);
-                outStream << "array[ptr] = getchar();\n";
+                outStream << GetIndent(indentLevels)
+                          << "array[ptr] = getchar();\n";
                 inCodeIndex += 1;
                 break;
             case '[':
-                outStream << GetIndent(indentLevels) + "while(array[ptr])\n" +
-                                 GetIndent(indentLevels) + "{\n";
+                outStream << GetIndent(indentLevels) << "while(array[ptr])\n"
+                          << GetIndent(indentLevels) << "{\n";
                 indentLevels++;
                 inCodeIndex += 1;
                 break;
             case ']':
                 indentLevels--;
-                outStream << GetIndent(indentLevels);
-                outStream << "}\n";
+                outStream << GetIndent(indentLevels) << "}\n";
                 inCodeIndex += 1;
                 break;
             default:
