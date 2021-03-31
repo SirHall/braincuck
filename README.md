@@ -16,7 +16,7 @@ the same with `-`, `<`, and `>`.
 
 `cmake ..`
 
-`make`
+`cmake --build .`
 
 `./out ../res/tictactoe.bf bf.c`
 
